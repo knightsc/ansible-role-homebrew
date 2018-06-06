@@ -2,5 +2,4 @@
 - hosts: localhost
 
   roles:
-    - elliotweiser.osx-command-line-tools
     - ansible-role-homebrew
