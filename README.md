@@ -1,8 +1,6 @@
 # Ansible Role: Homebrew
 
-[![Build Status][travis-badge]][travis-link]
 [![MIT licensed][mit-badge]][mit-link]
-[![Galaxy Role][role-badge]][galaxy-link]
 
 Installs [Homebrew][homebrew] on MacOS, and configures packages, taps, and cask apps according to supplied variables.
 
@@ -13,6 +11,10 @@ None.
 ## Role Variables
 
 Available variables are listed below, along with default values (see [`defaults/main.yml`](defaults/main.yml)):
+
+    homebrew_user_id:
+
+By default the role will attempt to look for the user id of user logged into the console. Optionally you can set this variable to be the local user you want to own the homebrew install. Parts of the install need root access and part need the local user.
 
     homebrew_repo: https://github.com/Homebrew/brew
 
@@ -69,10 +71,6 @@ Whether to install via a Brewfile. If so, you will need to install the `homebrew
 
 The directory where your Brewfile is located.
 
-## Dependencies
-
-  - [elliotweiser.osx-command-line-tools][dep-osx-clt-role]
-
 ## Example Playbook
 
     - hosts: localhost
@@ -92,23 +90,18 @@ Ansible's `local` connection. See also:
 
 ## Author Information
 
-This role was created in 2014 by [Jeff Geerling][author-website], author of
+This role was forked from the work created in 2014 by [Jeff Geerling][author-website], author of
 [Ansible for DevOps][ansible-for-devops].
 
 #### Maintainer(s)
 
-- [Jeff Geerling](https://github.com/geerlingguy)
-- [Elliot Weiser](https://github.com/elliotweiser)
+- [Scott Knight](https://github.com/knightsc)
 
 [ansible-for-devops]: https://www.ansiblefordevops.com/
 [author-website]: https://www.jeffgeerling.com/
 [caskroom]: https://caskroom.github.io/search
-[galaxy-link]: https://galaxy.ansible.com/geerlingguy/homebrew/
 [homebrew]: http://brew.sh/
 [mac-dev-playbook]: https://github.com/geerlingguy/mac-dev-playbook
 [mit-badge]: https://img.shields.io/badge/license-MIT-blue.svg
 [mit-link]: https://raw.githubusercontent.com/geerlingguy/ansible-role-homebrew/master/LICENSE
-[dep-osx-clt-role]: https://galaxy.ansible.com/elliotweiser/osx-command-line-tools/
-[role-badge]: https://img.shields.io/ansible/role/1858.svg
-[travis-badge]: https://travis-ci.org/geerlingguy/ansible-role-homebrew.svg?branch=master
-[travis-link]: https://travis-ci.org/geerlingguy/ansible-role-homebrew
+
