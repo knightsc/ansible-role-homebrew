@@ -34,7 +34,7 @@ The path where `brew` will be installed.
       - pv
       - { name: vim, install_options: "with-luajit,override-system-vi" }
 
-Packages you would like to make sure are installed via `brew install`. You can optionally add flags to the install by setting an `install_options` property, and if used, you need to explicitly set the `name` for the package as well.
+Packages you would like to make sure are installed via `brew install`. You can optionally add flags to the install by setting an `install_options` property, and if used, you need to explicitly set the `name` for the package as well. By default, no packages are installed (`homebrew_installed_packages: []`).
 
     homebrew_uninstalled_packages: []
 
@@ -52,7 +52,7 @@ Taps you would like to make sure Homebrew has tapped.
     homebrew_cask_apps:
       - firefox
 
-Apps you would like to have installed via `cask`. [Search][caskroom] for popular apps to see if they're available for install via Cask. Cask will not be used if it is not included in the list of taps in the `homebrew_taps` variable.
+Apps you would like to have installed via `cask`. [Search][caskroom] for popular apps to see if they're available for install via Cask. Cask will not be used if it is not included in the list of taps in the `homebrew_taps` variable. By default, no Cask apps will be installed (`homebrew_cask_apps: []`).
 
     homebrew_cask_uninstalled_apps:
       - google-chrome
@@ -86,7 +86,7 @@ Ansible's `local` connection. See also:
 
 ## License
 
-[MIT][mit-link]
+[MIT][link-license]
 
 ## Author Information
 
@@ -99,6 +99,10 @@ This role was forked from the work created in 2014 by [Jeff Geerling][author-web
 
 [ansible-for-devops]: https://www.ansiblefordevops.com/
 [author-website]: https://www.jeffgeerling.com/
+[badge-downloads]: https://img.shields.io/ansible/role/d/1858.svg
+[badge-license]: https://img.shields.io/github/license/geerlingguy/ansible-role-homebrew.svg
+[badge-role]: https://img.shields.io/ansible/role/1858.svg
+[badge-travis]: https://travis-ci.org/geerlingguy/ansible-role-homebrew.svg?branch=master
 [caskroom]: https://caskroom.github.io/search
 [homebrew]: http://brew.sh/
 [mac-dev-playbook]: https://github.com/geerlingguy/mac-dev-playbook
